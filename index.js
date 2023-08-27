@@ -13,7 +13,7 @@ app.use(cors());
 
 app.get('/', (req, res) => {
 	console.log('working')
-}
+})
 
 app.post('/pay', async (req, res)=> {
     try {
