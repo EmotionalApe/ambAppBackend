@@ -22,7 +22,7 @@ app.post('/pay', async (req, res)=> {
         
         const {amount} = parseInt(req.body);
         // if (!amount) return res.status(400).json({message: 'Amount invalid'})
-        console.log(money, typeof money)
+        console.log(amount, typeof amount)
 
         const paymentIntent = await stripe.paymentIntents.create({
             amount: Math.round(amount * 100),
