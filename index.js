@@ -26,7 +26,7 @@ app.post('/pay', async (req, res)=> {
         console.log(money, typeof money)
 
         const paymentIntent = await stripe.paymentIntents.create({
-            amount: Math.round(25 * 100),
+            amount: Math.round({money} * 100),
             currency: 'INR',
             automatic_payment_methods: {enabled: true,},
         })
