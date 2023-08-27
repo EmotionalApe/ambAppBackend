@@ -11,9 +11,13 @@ const port = 8080;
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+	console.log('working')
+}
+
 app.post('/pay', async (req, res)=> {
     try {
-        const {name} = req.body();
+        const {name} = req.body;
         if (!name) return res.status(400).json({message: 'Please enter a name'})
 
         const paymentIntent = await stripe.paymentIntents.create({
