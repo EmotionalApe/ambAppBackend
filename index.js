@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-	console.log('working')
+	res.send('working')
 })
 
 app.post('/pay', async (req, res)=> {
